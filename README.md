@@ -24,7 +24,8 @@
     - No missing data found in the input set.
     - Exchange holidays are taken into consideration (e.g., New Year's Day).
     - The dataset spans from Jan '18 to Dec '19 (503 trading days).
-- **EMA Calculation**: 
+- **EMA Calculation**:
+    - Current price in `EMA = (Current Price - Previous Day's EMA) * Multiplier + Previous Day's EMA` is taken as the corresponding closing price of that month.
     - The EMA calculation uses the standard formula with a smoothing factor of `2 / (N + 1)`.
     - The initial EMA value is seeded with the SMA of the same window size.
 - **Adjusted Close**: use of `adjclose` inplace of `close` may be better indicative when used for SMA and EMA for monthly aggregation
